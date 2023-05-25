@@ -10,12 +10,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header title="Application Form Testing" />
-        <p>There are two lead forms to test</p>
-        <ul>
-          <li><a  href="/bank-lead-form">.BANK Verification Application</a></li>
-          <li><a href="/insurance-lead-form">.INSURANCE Verification Application</a></li>
-        </ul>
+        <Header title=".INSURANCE Verification Application" />
+				<p>.INSURANCE is a verified TLD and to register a domain name(s) you must first complete the following verification application. Required fields are marked with an asterisk(*). fTLD will contact you if additional information is needed.</p>
+        <p>Upon approval, a registration token will be emailed to you which you must provide to your fTLD-Approved Registrar of choice to complete the domain name(s) registration process.</p>
+        <p>If you have questions, please contact fTLD at <a href="mailto:verify@fTLD.com">verify@fTLD.com</a> or +1 202 589 2412.</p>
       </main>
       <Footer />
     </div>
