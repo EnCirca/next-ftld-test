@@ -28,7 +28,7 @@ export default function AnnualVerificationForm() {
   return (
     <div className="container">
       <Head>
-        <title>FTP Annual Verification</title>
+        <title>FTLD Annual Verification</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
