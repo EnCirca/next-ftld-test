@@ -1,19 +1,17 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 export default function Home() {
 
-
   useEffect(() => {
-    
     (function() {
       function async_load() {
         var s = document.createElement('script');
         s.type = 'text/javascript';
         s.async = true;
-        var theUrl = 'https://ftld-services-qa.ftldregistrars.com/api/hubspot/5a706eb6dd3a7e0010200bf4/widgets/leadFormInsurance';
+        var theUrl = 'https://ftld-services-qa.ftldregistrars.com/api/hubspot/5ab52262c8bc8600107dacc5/widgets/leadFormInsurance';
         s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + 'ref=' + encodeURIComponent(window.location.href);
         var embedder = document.getElementById('ftld-leadFormInsurance-embed');
         embedder.parentNode.insertBefore(s, embedder);
