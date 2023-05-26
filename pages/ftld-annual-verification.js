@@ -32,7 +32,7 @@ export default function AnnualVerificationForm() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header title="FTP Annual Verification" />
+        <Header title="FTLD Annual Verification" />
         <div id="ftld-reverify-embed"></div>
       </main>
       <Footer />
