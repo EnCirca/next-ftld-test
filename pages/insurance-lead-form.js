@@ -1,30 +1,13 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import { useEffect } from 'react'
+import dynamic from 'next/dynamic'
 
-export default function Home() {
+export default function InsuranceLeadForm() {
 
-  useEffect(() => {
-    (function() {
-      function async_load() {
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        var theUrl = 'https://ftld-services-qa.ftldregistrars.com/api/hubspot/5ab52262c8bc8600107dacc5/widgets/leadFormInsurance';
-        s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + 'ref=' + encodeURIComponent(window.location.href);
-        var embedder = document.getElementById('ftld-leadFormInsurance-embed');
-        embedder.parentNode.insertBefore(s, embedder);
-      }
-      if (window.attachEvent) {
-        window.attachEvent('onload', async_load);
-      } else {
-        window.addEventListener('load', async_load, false);
-      }
-    })();
- 
-  }, []);
-
+  const InsuranceForm = dynamic(() => import('../components/insurance-form'), {
+    loading: () => <p>Loading...</p>,
+  });
 
   return (
     <div className="container">
@@ -38,6 +21,7 @@ export default function Home() {
         <p>Upon approval, a registration token will be emailed to you which you must provide to your fTLD-Approved Registrar of choice to complete the domain name(s) registration process.</p>
         <p>If you have questions, please contact fTLD at <a href="mailto:verify@fTLD.com">verify@fTLD.com</a> or +1 202 589 2412.</p>
         <div id="ftld-leadFormInsurance-embed"></div>
+        <InsuranceForm />
       </main>
       <Footer />
     </div>

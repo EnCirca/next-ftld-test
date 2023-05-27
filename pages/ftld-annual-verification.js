@@ -1,29 +1,13 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import { useEffect } from 'react'
+import dynamic from 'next/dynamic'
 
 export default function AnnualVerificationForm() {
 
-  useEffect(() => {
-
-  (function() {
-    function async_load() {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      var theUrl = 'https://ftld-services-qa.ftldregistrars.com/api/hubspot/5ab52262c8bc8600107dacc5/widgets/reverify';
-      s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + 'ref=' + encodeURIComponent(window.location.href);
-      var embedder = document.getElementById('ftld-reverify-embed');
-      embedder.parentNode.insertBefore(s, embedder);
-    }
-    if (window.attachEvent) {
-      window.attachEvent('onload', async_load);
-    } else {
-      window.addEventListener('load', async_load, false);
-    }
-  })();
-  }, []);
+  const AnnualVerification = dynamic(() => import('../components/annual-verification'), {
+    loading: () => <p>Loading...</p>,
+  });
 
   return (
     <div className="container">
@@ -34,6 +18,7 @@ export default function AnnualVerificationForm() {
       <main>
         <Header title="FTLD Annual Verification" />
         <div id="ftld-reverify-embed"></div>
+        <AnnualVerification />
       </main>
       <Footer />
     </div>
